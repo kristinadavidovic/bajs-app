@@ -4,6 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 
+// firebase
 import * as firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
@@ -21,6 +22,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
+
+// styles
+import './scss/app.scss'
 
 Vue.config.productionTip = false
 
