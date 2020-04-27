@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'about-view',
-}
+  name: 'about-view'
+};
 </script>

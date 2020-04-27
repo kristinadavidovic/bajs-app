@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'poop-log-view',
-}
+  name: 'poop-log-view'
+};
 </script>

@@ -1,16 +1,16 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
 // components
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/HomeView.vue';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: HomeView,
+    component: HomeView
   },
   {
     path: '/about',
@@ -19,7 +19,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: 'aboutView' */ '../views/AboutView.vue'),
+      import(/* webpackChunkName: 'aboutView' */ '../views/AboutView.vue')
   },
   {
     path: '/profile',
@@ -28,7 +28,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: 'profileView' */ '../views/ProfileView.vue'),
+      import(/* webpackChunkName: 'profileView' */ '../views/ProfileView.vue')
   },
   {
     path: '/stats',
@@ -37,7 +37,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: 'statsView' */ '../views/StatsView.vue'),
+      import(/* webpackChunkName: 'statsView' */ '../views/StatsView.vue')
   },
   {
     path: '/log-poop',
@@ -46,14 +46,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: 'poopLogView' */ '../views/PoopLogView.vue'),
-  },
-]
+      import(/* webpackChunkName: 'poopLogView' */ '../views/PoopLogView.vue')
+  }
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes,
-})
+  routes
+});
 
-export default router
+export default router;

@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import NavLink from '../elements/NavLink'
+import NavLink from '../elements/NavLink';
 
 export default {
   name: 'Home',
   components: {
-    NavLink,
-  },
-}
+    NavLink
+  }
+};
 </script>

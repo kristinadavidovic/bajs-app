@@ -27,8 +27,8 @@ export default {
   props: {
     navType: {
       required: true,
-      type: String,
-    },
+      type: String
+    }
   },
   data() {
     return {
@@ -36,32 +36,32 @@ export default {
         {
           id: 0,
           url: '/',
-          title: 'Home',
+          title: 'Home'
         },
         {
           id: 1,
           url: '/log-poop',
-          title: 'Log POOP',
+          title: 'Log POOP'
         },
         {
           id: 2,
           url: '/stats',
-          title: 'Stats',
+          title: 'Stats'
         },
         {
           id: 3,
           url: '/profile',
-          title: 'Profile',
-        },
+          title: 'Profile'
+        }
       ],
       footerLinks: [
         {
           id: 0,
           url: '/about',
-          title: 'About',
-        },
-      ],
-    }
-  },
-}
+          title: 'About'
+        }
+      ]
+    };
+  }
+};
 </script>

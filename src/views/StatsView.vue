@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'stats-view',
-}
+  name: 'stats-view'
+};
 </script>

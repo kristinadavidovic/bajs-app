@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import Home from '../components/pages/Home'
+import Home from '../components/pages/Home';
 
 export default {
   name: 'home-view',
   components: {
-    Home,
-  },
-}
+    Home
+  }
+};
 </script>

@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import Navigation from './components/elements/Navigation'
+import Navigation from './components/elements/Navigation';
 export default {
   components: {
-    Navigation,
-  },
-}
+    Navigation
+  }
+};
 </script>

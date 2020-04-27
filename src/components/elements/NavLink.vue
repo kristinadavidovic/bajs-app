@@ -10,8 +10,8 @@ export default {
   props: {
     url: {
       required: true,
-      type: String,
-    },
-  },
-}
+      type: String
+    }
+  }
+};
 </script>
