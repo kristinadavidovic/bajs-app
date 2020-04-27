@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Profile from '../components/pages/Profile';
+import Profile from '@/components/pages/Profile';
 
 export default {
   name: 'profile-view',

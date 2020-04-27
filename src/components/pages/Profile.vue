@@ -16,13 +16,18 @@
       <ul>
         <li>Edit profile</li>
         <li>Clear data</li>
-        <li>Log out</li>
+        <li>
+          <a @click.prevent="logout" href="#">Log out</a>
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
+// rdm
+import firebase from 'firebase';
+// mock data
 import people from '../../mock-data/people/index';
 
 export default {
@@ -31,6 +36,16 @@ export default {
     return {
       profilePic: people[0].personImg
     };
+  },
+  methods: {
+    logout: function() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.go({ path: this.$router.path });
+        });
+    }
   },
   computed: {
     personName: () => `${people[0].personName} ${people[0].personSurname}`

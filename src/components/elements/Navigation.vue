@@ -1,67 +1,49 @@
 <template>
   <div>
-    <div
-      v-if="navType === 'main'"
-      id="navigation-main"
-      class="navigation navigation--main"
-    >
-      <router-link v-for="link in navLinks" :key="link.id" :to="link.url">{{
-        link.title
-      }}</router-link>
-    </div>
-    <div
-      v-if="navType === 'footer'"
-      id="navigation-footer"
-      class="navigation navigation--footer"
-    >
-      <router-link v-for="link in footerLinks" :key="link.id" :to="link.url">{{
-        link.title
-      }}</router-link>
+    <div id="navigation-main" class="navigation navigation--main">
+      <ul>
+        <li>
+          <router-link to="/">Home</router-link>
+        </li>
+        <li v-if="isLoggedIn">
+          <router-link to="/log-poop">Log</router-link>
+        </li>
+        <li v-if="isLoggedIn">
+          <router-link to="/stats">Stats</router-link>
+        </li>
+        <li v-if="isLoggedIn">
+          <router-link to="/profile">Profile</router-link>
+        </li>
+        <li v-if="!isLoggedIn">
+          <router-link to="/login">Login</router-link>
+        </li>
+        <li v-if="!isLoggedIn">
+          <router-link to="/register">Register</router-link>
+        </li>
+        <li>
+          <router-link to="/about">About</router-link>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
+import firebase from 'firebase';
+
 export default {
   name: 'navigation',
-  props: {
-    navType: {
-      required: true,
-      type: String
-    }
-  },
   data() {
     return {
-      navLinks: [
-        {
-          id: 0,
-          url: '/',
-          title: 'Home'
-        },
-        {
-          id: 1,
-          url: '/log-poop',
-          title: 'Log POOP'
-        },
-        {
-          id: 2,
-          url: '/stats',
-          title: 'Stats'
-        },
-        {
-          id: 3,
-          url: '/profile',
-          title: 'Profile'
-        }
-      ],
-      footerLinks: [
-        {
-          id: 0,
-          url: '/about',
-          title: 'About'
-        }
-      ]
+      isLoggedIn: false,
+      currentUser: false
     };
+  },
+  created() {
+    if (firebase.auth().currentUser) {
+      this.isLoggedIn = true;
+      this.currentUser = firebase.auth().currentUser.email;
+    }
   }
 };
 </script>
