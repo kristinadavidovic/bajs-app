@@ -1,6 +1,6 @@
 <template>
   <div class="add-log">
-    <form @submit.prevent="logPoop">
+    <form @submit.prevent="logPoop" ref="formLog">
       <input type="date" name="poopDate" :value="getNow('date')" />
       <input type="time" name="poopTime" :value="getNow('time')" />
       <textarea
@@ -41,10 +41,19 @@ export default {
         .padStart(2, '0');
       const date = `${year}-${month}-${day}`;
 
-      const time = today.getHours() + ':' + today.getMinutes();
+      const time =
+        today
+          .getHours()
+          .toString()
+          .padStart(2, '0') +
+        ':' +
+        today
+          .getMinutes()
+          .toString()
+          .padStart(2, '0');
       return dateOrTime == 'date' ? date : time;
     },
-    logPoop: event => {
+    logPoop: function(event) {
       const poopDate = event.target.elements.poopDate.value;
       const poopTime = event.target.elements.poopTime.value;
       const poopNotes = event.target.elements.notes.value && [
@@ -57,6 +66,10 @@ export default {
         poopTime,
         poopNotes
       });
+
+      this.$refs.formLog.reset();
+
+      console.log('yyy');
     }
   },
   created() {
