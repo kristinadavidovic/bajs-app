@@ -1,11 +1,16 @@
 <template>
   <div class="page-poop-log">
-    <h1>Poop Log</h1>
+    <Log />
   </div>
 </template>
 
 <script>
+import Log from '../components/pages/Log';
+
 export default {
-  name: 'poop-log-view'
+  name: 'poop-log-view',
+  components: {
+    Log
+  }
 };
 </script>
