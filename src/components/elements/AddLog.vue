@@ -60,6 +60,14 @@ export default {
         ...event.target.elements.notes.value.split(', ')
       ];
 
+      // stag
+      // axios.post('https://bajs-co.firebaseio.com/poops-dev.json', {
+      //   poop: true,
+      //   poopDate,
+      //   poopTime,
+      //   poopNotes
+      // });
+      // prod
       axios.post('https://bajs-co.firebaseio.com/poops.json', {
         poop: true,
         poopDate,

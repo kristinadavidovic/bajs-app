@@ -4,6 +4,8 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store';
 
+import VCalendar from 'v-calendar';
+
 // firebase
 import firebase from 'firebase';
 
@@ -31,6 +33,8 @@ firebase.auth().onAuthStateChanged(() => {
     }).$mount('#app');
   }
 });
+
+Vue.use(VCalendar, {});
 
 // styles
 import './scss/app.scss';
